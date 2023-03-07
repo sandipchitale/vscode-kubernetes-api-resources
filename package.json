@@ -1,0 +1,219 @@
+{
+  "name": "vscode-kubernetes-api-resources",
+  "displayName": "Kubernetes Api Resources in Clusters Explorer",
+  "description": "Show Kubernetes Api Resources in Clusters Explorer",
+  "icon": "images/icon.png",
+  "version": "1.0.7",
+  "galleryBanner": {
+		"color": "#341114",
+		"theme": "dark"
+	},
+  "extensionDependencies": [
+    "ms-kubernetes-tools.vscode-kubernetes-tools"
+  ],
+  "publisher": "sandipchitale",
+  "author": {
+    "name": "Sandip Chitale"
+  },
+  "maintainers": [
+    "Sandip Chitale <sandipchitale@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandipchitale/vscode-kubernetes-api-resources"
+  },
+  "bugs": {
+    "url": "https://github.com/sandipchitale/vscode-kubernetes-api-resources/issues"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "Kubernetes"
+  ],
+  "activationEvents": [
+    "onView:extension.vsKubernetesExplorer"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-kubernetes-api-resources.show-kubernetes-commander",
+        "title": "Kubernetes Commander",
+        "icon": "$(calendar)",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.api-resource-node.explain",
+        "title": "Explain",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.api-resource-node.explain-field",
+        "title": "Explain",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.api-resource-node.get-all",
+        "title": "Get All",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.namespaced-api-resource-node.get-all-all-namespaces",
+        "title": "Get All (All Namespaces)",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.api-resource-node.get-selected",
+        "title": "Get Selected",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.api-resource-node.describe-all",
+        "title": "Describe All",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.namespaced-api-resource-node.describe-all-all-namespaces",
+        "title": "Describe All (All Namespaces)",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.api-resource-node.describe-selected",
+        "title": "Describe Selected",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.api-resource-node.load-all",
+        "title": "Load All",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.namespaced-api-resource-node.load-all-all-namespaces",
+        "title": "Load All (All Namespaces)",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.api-resource-node.load-selected",
+        "title": "Load Selected",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.api-resource-node.watch-all",
+        "title": "Watch All",
+        "icon": "$(eye)",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.namespaced-api-resource-node.watch-all-all-namespaces",
+        "title": "Watch All (All Namespaces)",
+        "icon": "$(eye)",
+        "category": "Kubernetes"
+      },
+      {
+        "command": "k8s.api-resource-node.watch-selected",
+        "title": "Watch Selected",
+        "icon": "$(eye)",
+        "category": "Kubernetes"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "vscode-kubernetes-api-resources.show-kubernetes-commander",
+          "when": "view == extension.vsKubernetesExplorer",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "k8s.api-resource-node.explain",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /apiresource/i"
+        },
+        {
+          "command": "k8s.api-resource-node.explain-field",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /field/i"
+        },
+        {
+          "command": "k8s.api-resource-node.get-all",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /apiresource/i"
+        },
+        {
+          "command": "k8s.namespaced-api-resource-node.get-all-all-namespaces",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /namespacedapiresource/i"
+        },
+        {
+          "command": "k8s.api-resource-node.get-selected",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /apiresource/i"
+        },
+        {
+          "command": "k8s.api-resource-node.describe-all",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /apiresource/i"
+        },
+        {
+          "command": "k8s.namespaced-api-resource-node.describe-all-all-namespaces",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /namespacedapiresource/i"
+        },
+        {
+          "command": "k8s.api-resource-node.describe-selected",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /apiresource/i"
+        },
+        {
+          "command": "k8s.api-resource-node.load-all",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /apiresource/i"
+        },
+        {
+          "command": "k8s.namespaced-api-resource-node.load-all-all-namespaces",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /namespacedapiresource/i"
+        },
+        {
+          "command": "k8s.api-resource-node.load-selected",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /apiresource/i"
+        },
+        {
+          "command": "k8s.api-resource-node.watch-all",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /apiresource/i",
+          "group": "inline"
+        },
+        {
+          "command": "k8s.namespaced-api-resource-node.watch-all-all-namespaces",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /namespacedapiresource/i",
+          "group": "inline"
+        },
+        {
+          "command": "k8s.api-resource-node.watch-selected",
+          "when": "view == extension.vsKubernetesExplorer && viewItem =~ /apiresource/i",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.27.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.4.0",
+    "typescript": "^4.3.2",
+    "vscode-test": "^1.5.2"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "vscode-kubernetes-tools-api": "^1.3.0"
+  }
+}
